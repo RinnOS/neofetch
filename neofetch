@@ -136,7 +136,7 @@ distro_shorthand="off"
 # Example:
 # on:  'Arch Linux x86_64'
 # off: 'Arch Linux'
-os_arch="on"
+os_arch="off"
 
 
 # Uptime
@@ -780,7 +780,7 @@ image_source="auto"
 # Default: 'auto'
 # Values:  'auto', 'distro_name'
 # Flag:    --ascii_distro
-# NOTE: AIX, Hash, Alpine, AlterLinux, Amazon, Anarchy, Android, instantOS,
+# NOTE: AmethystOS, AIX, Hash, Alpine, AlterLinux, Amazon, Anarchy, Android, instantOS,
 #       Antergos, antiX, "AOSC OS", "AOSC OS/Retro", Apricity, ArchCraft,
 #       ArcoLinux, ArchBox, ARCHlabs, ArchStrike, XFerience, ArchMerge, Arch,
 #       Artix, Arya, Bedrock, Bitrig, BlackArch, BLAG, BlankOn, BlueLight,
@@ -5526,6 +5526,33 @@ get_distro_ascii() {
     #
     # $ascii_distro is the same as $distro.
     case $(trim "$ascii_distro") in
+
+        "AmethystOS"*)
+            set_colors 7 15 13 5 4 0
+            read -rd '' ascii_data <<'EOF'
+             ${c1}&&&${c2}@@@/
+          @&&${c1}&%&&${c2}@@@@@
+        @&&${c1}&&&%${c2}#${c1}%${c2}@@@@@@@@
+        %${c1}&%&%&&${c2}#${c3}#${c1}%${c2}@@&@@&&${c1}&&
+         &%%%%%${c2}#${c4}/${c3}#%${c1}&&&&&&%&%%%            ${c2}&${c1}&&&&
+         %%%${c4}%%${c3}##${c1}(${c4}/${c3}(${c1}#%%%%%${c4}%%%${c3}#${c4}%%${c3}#${c1}      %%%%%&&%%
+&${c2}&        ${c3}######(${c4}/((${c1}&${c3}#(#%%%#######(%${c1}%%${c3}(####%${c1}%%%
+${c3}#${c1}&%${c2}&@@${c1}&   ${c4}(${c3}(#((${c4}(((*/(${c3}(((((((((######(${c4}(///(${c3}((#%${c2}*
+ ${c1}%&${c3}#${c1}&${c2}&@@@${c3}#${c4}/((((////,/${c1}&${c4}(((${c3}((((((((((%%#(${c4}((${c3}((##
+ ${c2}.${c3}#${c1}%${c4}%${c1}%%${c2}#@&${c4}(*((//////////(${c3}((##%%%#%####${c4}/,/(${c3}(
+  #####%%#(${c4}**(((///**(${c3}#${c4}//(${c3}#${c4}/*///${c3}(####${c5}.${c4},((${c3}(
+    ${c4}*${c3}(#####${c4}/,*(((///*,(/********/(${c3}(${c4}*${c5}.${c3},/(
+       ${c3}%(#(${c4}(*,/((///**((*********/${c5}..${c4}*//
+          (//*,/((///**(${c3}#${c4}*******${c5},${c6}.${c5}.${c4},**/(${c3}(#${c1}%&${c3}#
+             ${c4}*,,((////*((******${c6}..${c5}.${c4},*///((/(${c3}#
+               ${c1}/${c4}*((///*/((***,${c5}..${c4},,,**/**(${c3}#
+                  #${c4}///*/(((/.,** ,**,*/
+                     /**//(,,*   ***${c3}#
+                       ${c2}*${c4}*/,*    //
+EOF
+        ;;
+
+
         "AIX"*)
             set_colors 2 7
             read -rd '' ascii_data <<'EOF'
